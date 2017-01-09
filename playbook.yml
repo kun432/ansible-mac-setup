@@ -1,0 +1,91 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  become: no
+  vars:
+    homebrew_taps:
+      - caskroom/cask
+      - caskroom/versions
+      - sanemat/font
+    homebrew_packages:
+      - ansible
+      - awscli
+      - vim
+      - git
+      - jq
+      - go
+      - fish
+      - fontforge
+      - Ricty
+      - wget
+      - coreutils
+      - openssl
+      - { name: openssl, state: linked, install_options: force }
+      - rbenv
+      - ruby-build
+      - heroku
+      - nodebrew
+      - gibo
+    homebrew_cask_packages:
+      - atom
+      - avast
+      - docker
+      - dropbox
+      - google-chrome
+      - google-japanese-ime
+      - vagrant
+      - virtualbox
+      - virtualbox-extension-pack
+      - vlc
+      - yujitach-menumeters
+      - xquartz
+      - iterm2
+      - shiftit
+      - google-cloud-sdk
+      - franz
+      - visual-studio-code
+
+  tasks:
+    - name: homebrew の tap リポジトリを追加
+      homebrew_tap: tap={{ item }} state=present
+      with_items: "{{ homebrew_taps }}"
+
+    - name: homebrew をアップデート
+      homebrew: update_homebrew=yes
+
+    - name: brew パッケージをインストール
+      homebrew: >
+        name={{ item.name | default(item) }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: "{{ homebrew_packages }}"
+      when: homebrew_packages
+
+    - name: cask パッケージをインストール
+      homebrew_cask: >
+        name={{ item.name | default(item) }}
+        state={{ item.state | default('present') }}
+      with_items: "{{ homebrew_cask_packages }}"
+      when: homebrew_cask_packages
+
+#    - name: oh-my-fish のインストール
+#      shell: curl -L http://get.oh-my.fish | fish
+#      args:
+#        creates: ~/.config/omf/
+
+    - name: Ricty のフォント生成
+      shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+      args:
+        creates: ~/Library/Fonts/Ricty-Bold.ttf
+      notify: run fc-cache
+
+    - name: nodebrew ディレクトリを作成
+      file: path=~/.nodebrew/src state=directory
+
+  handlers:
+    - name: run fc-cache
+      shell: fc-cache -vf
