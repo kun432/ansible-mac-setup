@@ -21,7 +21,7 @@ $ cd ansible_mac_setup
 3. Download ansible role.
 
 ```shell
-$ ansible-galaxy install --roles-path=. kun432.atom-packages 
+$ ansible-galaxy install --roles-path=roles kun432.atom-packages 
 ```
 
 4. Run playbook.

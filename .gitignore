@@ -34,3 +34,4 @@ Temporary Items
 
 share/*
 roles/*
+!.gitkeep
