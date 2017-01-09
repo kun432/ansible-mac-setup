@@ -18,7 +18,13 @@ $ git clone https://github.com/kun432/ansible_mac_setup/
 $ cd ansible_mac_setup
 ```
 
-3. Run playbook.
+3. Download ansible role.
+
+```shell
+$ ansible-galaxy install --roles-path=. kun432.atom-packages 
+```
+
+4. Run playbook.
 
 ```shell
 $ ansible-playbook -i hosts playbook.yml
