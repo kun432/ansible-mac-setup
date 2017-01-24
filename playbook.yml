@@ -54,6 +54,8 @@
       - linter
       - japanese-menu
       - emmet
+      - vim-mode
+      - ex-mode
       
   tasks:
     - name: homebrew の tap リポジトリを追加
