@@ -44,6 +44,7 @@
       - google-cloud-sdk
       - franz
       - visual-studio-code
+      - skim
     atom_packages:
       - color-picker
       - project-manager
