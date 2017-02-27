@@ -45,6 +45,7 @@
       - franz
       - visual-studio-code
       - skim
+      - anaconda
     atom_packages:
       - color-picker
       - project-manager
