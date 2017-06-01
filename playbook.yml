@@ -26,6 +26,7 @@
       - heroku
       - nodebrew
       - gibo
+      - nmap
     homebrew_cask_packages:
       - atom
       - avast
@@ -46,6 +47,7 @@
       - visual-studio-code
       - skim
       - anaconda
+      - burp-suite
     atom_packages:
       - color-picker
       - project-manager
