@@ -27,6 +27,7 @@
       - nodebrew
       - gibo
       - nmap
+      - nkf
     homebrew_cask_packages:
       - atom
       - avast
@@ -48,6 +49,7 @@
       - skim
       - anaconda
       - burp-suite
+      - remote-play
     atom_packages:
       - color-picker
       - project-manager
