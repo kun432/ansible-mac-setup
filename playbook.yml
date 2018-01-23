@@ -50,6 +50,7 @@
       - anaconda
       - burp-suite
       - remote-play
+      - skype
     atom_packages:
       - color-picker
       - project-manager
