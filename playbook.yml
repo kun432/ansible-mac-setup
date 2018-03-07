@@ -7,6 +7,7 @@
       - caskroom/cask
       - caskroom/versions
       - sanemat/font
+      - caskroom/drivers
     homebrew_packages:
       - ansible
       - awscli
@@ -28,6 +29,7 @@
       - gibo
       - nmap
       - nkf
+      - tree
     homebrew_cask_packages:
       - atom
       - avast
@@ -51,18 +53,7 @@
       - burp-suite
       - remote-play
       - skype
-    atom_packages:
-      - color-picker
-      - project-manager
-      - autocomplete-plus
-      - autocomplete-paths
-      - file-icons
-      - atom-beautify
-      - linter
-      - japanese-menu
-      - emmet
-      - vim-mode
-      - ex-mode
+      - dash
       
   tasks:
     - name: homebrew の tap リポジトリを追加
