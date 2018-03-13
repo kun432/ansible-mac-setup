@@ -54,7 +54,8 @@
       - remote-play
       - skype
       - dash
-      
+      - transmit
+      - transmit-disk 
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
@@ -81,11 +82,6 @@
         state={{ item.state | default('present') }}
       with_items: "{{ homebrew_cask_packages }}"
       when: homebrew_cask_packages
-
-    - name: atom パッケージをインストール
-      apm: name={{ item }} state=latest
-      with_items: "{{ atom_packages }}"
-      when: atom_packages
 
 #    - name: oh-my-fish のインストール
 #      shell: curl -L http://get.oh-my.fish | fish
