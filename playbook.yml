@@ -33,7 +33,7 @@
     homebrew_cask_packages:
       - atom
       - avast
-      - docker
+      - docker-edge
       - dropbox
       - google-chrome
       - google-japanese-ime
@@ -54,8 +54,8 @@
       - remote-play
       - skype
       - dash
-      - transmit
-      - transmit-disk 
+      - cyberduck
+      - adobe-acrobat-reader
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
