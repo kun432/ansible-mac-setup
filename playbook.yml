@@ -30,6 +30,8 @@
       - nmap
       - nkf
       - tree
+      - m-cli
+      - ask-cli
     homebrew_cask_packages:
       - atom
       - avast
