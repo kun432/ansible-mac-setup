@@ -4,10 +4,10 @@
   become: no
   vars:
     homebrew_taps:
-      - caskroom/cask
-      - caskroom/versions
+      - homebrew/cask
+      - homebrew/cask-versions
       - sanemat/font
-      - caskroom/drivers
+      - homebrew/cask-drivers
     homebrew_packages:
       - ansible
       - awscli
