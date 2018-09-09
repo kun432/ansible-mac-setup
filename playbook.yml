@@ -32,6 +32,7 @@
       - tree
       - m-cli
       - ask-cli
+      - awslogs
     homebrew_cask_packages:
       - atom
       - avast
