@@ -33,6 +33,7 @@
       - m-cli
       - ask-cli
       - awslogs
+      - hugo
     homebrew_cask_packages:
       - atom
       - avast
