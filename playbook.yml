@@ -34,6 +34,7 @@
       - ask-cli
       - awslogs
       - hugo
+      - httpie
     homebrew_cask_packages:
       - atom
       - avast
@@ -62,6 +63,7 @@
       - google-backup-and-sync
       - cloudytabs
       - awslogs
+      - skitch
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
