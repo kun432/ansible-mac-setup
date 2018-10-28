@@ -35,6 +35,7 @@
       - awslogs
       - hugo
       - httpie
+      - ffmpeg
     homebrew_cask_packages:
       - atom
       - avast
