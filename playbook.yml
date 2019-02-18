@@ -24,18 +24,17 @@
       - { name: openssl, state: linked, install_options: force }
       - rbenv
       - ruby-build
-      - heroku
       - nodebrew
       - gibo
       - nmap
       - nkf
       - tree
       - m-cli
-      - ask-cli
       - awslogs
       - hugo
       - httpie
       - ffmpeg
+      - yarn
     homebrew_cask_packages:
       - atom
       - avast
@@ -93,6 +92,9 @@
         state={{ item.state | default('present') }}
       with_items: "{{ homebrew_cask_packages }}"
       when: homebrew_cask_packages
+
+    - name: homebrew の node パッケージをインストール
+      shell: brew uninstall node --ignore-dependencies
 
 #    - name: oh-my-fish のインストール
 #      shell: curl -L http://get.oh-my.fish | fish
