@@ -51,7 +51,7 @@
       - iterm2
       - shiftit
       - google-cloud-sdk
-      - franz
+      - station
       - visual-studio-code
       - skim
       - anaconda
@@ -66,6 +66,7 @@
       - awslogs
       - skitch
       - marp
+      - firealpaca
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
