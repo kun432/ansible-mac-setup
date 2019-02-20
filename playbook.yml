@@ -66,6 +66,7 @@
       - skitch
       - marp
       - firealpaca
+      - haptickey
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
@@ -92,9 +93,15 @@
         state={{ item.state | default('present') }}
       with_items: "{{ homebrew_cask_packages }}"
       when: homebrew_cask_packages
+    
+    - name: homebrew の node パッケージの存在チェック
+      stat:
+              path: /usr/local/bin/node
+      register: brew_node
 
-    - name: homebrew の node パッケージをインストール
+    - name: homebrew の node パッケージをアンインストール
       shell: brew uninstall node --ignore-dependencies
+      when: brew_node.stat.exists
 
 #    - name: oh-my-fish のインストール
 #      shell: curl -L http://get.oh-my.fish | fish
