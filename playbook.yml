@@ -67,6 +67,7 @@
       - marp
       - firealpaca
       - haptickey
+      - balenaetcher
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
