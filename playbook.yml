@@ -68,6 +68,10 @@
       - firealpaca
       - haptickey
       - balenaetcher
+      - fritzing
+      - soundflower
+      - franz
+      - amazon-photos
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
