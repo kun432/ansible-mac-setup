@@ -35,6 +35,8 @@
       - httpie
       - ffmpeg
       - yarn
+      - git-secrets
+      - minikube
     homebrew_cask_packages:
       - atom
       - avast
@@ -72,6 +74,7 @@
       - soundflower
       - franz
       - amazon-photos
+      - licecap
   tasks:
     - name: homebrew の tap リポジトリを追加
       homebrew_tap: tap={{ item }} state=present
