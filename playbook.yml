@@ -37,6 +37,7 @@
       - yarn
       - git-secrets
       - minikube
+      - sox
     homebrew_cask_packages:
       - atom
       - avast
